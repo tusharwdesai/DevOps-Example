@@ -28,20 +28,20 @@ node {
       dockerImage = docker.build("devopsexample:${env.BUILD_NUMBER}")
     }
    	  
-    stage('Deploy Docker Image and login'){
+//     stage('Deploy Docker Image and login'){
       
-      echo "Docker Image Tag Name: ${dockerImageTag}"
+//       echo "Docker Image Tag Name: ${dockerImageTag}"
 	  
-        sh "docker images"
-        sh "docker login -u tusharwdesai -p Tush@3030" // put PWD
+//         sh "docker images"
+//         sh "docker login -u tusharwdesai -p Tush@3030" // put PWD
 	
-}
-    stage('Docker push'){
-       // docker images | awk '{print $3}' | awk 'NR==2'
-	// sh "docker images | awk '{print $3}' | awk 'NR==2'"
-	//sh echo "Enter the docker lattest imageID"
-	//sh "read imageid"
-	   sh "docker tag 829127afe791   tusharwdesai/myapplication" //must change your name and tag no
-        sh "docker push   tusharwdesai/myapplication"
-  }
+// }
+//     stage('Docker push'){
+//        // docker images | awk '{print $3}' | awk 'NR==2'
+// 	// sh "docker images | awk '{print $3}' | awk 'NR==2'"
+// 	//sh echo "Enter the docker lattest imageID"
+// 	//sh "read imageid"
+// 	   sh "docker tag 829127afe791   tusharwdesai/myapplication" //must change your name and tag no
+//         sh "docker push   tusharwdesai/myapplication"
+//   }
 }
